@@ -41,6 +41,8 @@ app.get("/", function (req, res, next) {
             title: "All Countries",
             data: rows,
           });
+
+          // res.status(201).send({ response: rows });
         }
       }
     );

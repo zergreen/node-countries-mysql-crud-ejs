@@ -36,6 +36,26 @@ app.get("/testlistallcountry", function (req, res, next) {
     });
   });
 });
+
+app.get("/connect", (req, res) => {
+  const success = {
+    title: "Success connect to database",
+    status: "555",
+    // etc: "โหล เทสๆ ภาษาไทย",
+  };
+  console.log("I'm at checkconnectiontodatabase");
+  req.getConnection((err, db) => {
+    if (err) {
+      console.log("refuse to connection AT : " + error);
+      return res.status(501).send({ response: "error" });
+    } else {
+      console.log("connection to DATABASE SUCCESS!");
+    }
+    console.log(success);
+    return res.status(201).send({ response: success });
+  });
+});
+
 /**
  * We assign app object to module.exports
  *
