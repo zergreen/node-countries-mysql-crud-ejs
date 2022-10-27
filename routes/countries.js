@@ -241,7 +241,7 @@ app.put("/edit/(:id)", function (req, res, next) {
               callingCode: req.body.callingCode,
             });
           } else {
-            req.flash("success", "Data updated successfully!");
+            req.flash("error", "Data updated successfully!");
 
             // render to views/country/add.ejs
             res.render("country/edit", {
